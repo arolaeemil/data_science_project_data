@@ -5,3 +5,6 @@ Vuosien 2016-2026 Helsingin pörssin osakkeiden päivittäiset hinnat kansiossa 
 Yhtiöiden maksamat osingot (niin pitkälle kuin saa yfinancen kautta) kansiossa dividends.
 
 Mukana myös pari koodinpätkää, joilla saa datan haettua (saman kuin kansioissa) ja plotattua (huonosti ja yksi kerrallaan tiedostopolkua säätämällä)
+
+Yfinancen kautta ei saa pörssistä poistuneiden yhtiöiden tietoja, koska Yahoo
+lopettaa näiden tarjoamisen.
