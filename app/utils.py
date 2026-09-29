@@ -7,7 +7,7 @@ def write_prices():
 
     data = {}
     for ticker in tickers:
-        ticker_data = yf.download(ticker, auto_adjust=False, start="2016-01-01", end="2026-09-17",)
+        ticker_data = yf.download(ticker, auto_adjust=False, start="2016-01-01", end="2026-09-17")
         data[ticker[:-3]] = ticker_data["Adj Close"].squeeze().tolist()
 
     with open("static/data.json", "w", encoding="utf-8") as file:
