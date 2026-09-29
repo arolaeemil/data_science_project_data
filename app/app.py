@@ -1,6 +1,13 @@
 from rnn import train
+from utils import get_prices
 
-values = [1, 2, 1, 2, 1]
-model = train(values, sequence_length=3, target_offset=1)
-prediction = model.predict_next(values[-3:])
+
+values = get_prices()
+
+data = values["NDA-FI"]
+
+model = train(data, sequence_length=3, target_offset=1)
+prediction = model.predict_next(data[-3:])
 print(prediction)
+
+
