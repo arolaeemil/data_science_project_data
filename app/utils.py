@@ -48,9 +48,10 @@ def get_normalization_data():
 
 def unnormalize(data):
     normalization_data = get_normalization_data()
+    original = {}
 
     for key, value in data.items():
         mean = normalization_data[key]["mean"]
         std = normalization_data[key]["std"]
-        data[key] = (value * std) + mean
-    return data
+        original[key] = (value * std) + mean
+    return original
