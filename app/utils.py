@@ -1,4 +1,5 @@
 import yfinance as yf
+import numpy as np
 import json
 
 def write_prices():
@@ -12,6 +13,20 @@ def write_prices():
 
     with open("static/data.json", "w", encoding="utf-8") as file:
         json.dump(data, file)
+    return data
+
+def normalize_prices():
+    data = get_prices()
+    for key, values in data.items():
+        values = np.asarray(values)
+        mean = np.mean(values)
+        std = np.std(values)
+        normalized = (values - mean) / std
+        data[key] = normalized.tolist()
+
+    with open("static/normalized.json", "w", encoding="utf-8") as file:
+        json.dump(data, file)
+    return data
 
 def get_prices():
     with open("static/data.json", "r", encoding="utf-8") as file:
