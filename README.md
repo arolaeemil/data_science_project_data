@@ -11,7 +11,7 @@ lopettaa näiden tarjoamisen.
 
 ## TODO
 
-- datan normalisointi
+- mallin muuttaminen niin että se käyttää valmiiksi normalisoitua dataa
 - monen käyrän koulutus (k-fold)
 - data pipeline automatisointi
 - eri koulutusparametrien testaus
