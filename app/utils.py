@@ -59,3 +59,7 @@ def unnormalize(data):
         std = normalization_data[key]["std"]
         original[key] = (value * std) + mean
     return original
+
+if __name__ == "__main__":
+    write_prices()
+    normalize_prices()
