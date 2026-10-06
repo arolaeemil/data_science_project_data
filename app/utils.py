@@ -1,4 +1,5 @@
 import yfinance as yf
+import numpy as np
 import json
 
 def write_prices():
@@ -13,6 +14,23 @@ def write_prices():
     with open("static/data.json", "w", encoding="utf-8") as file:
         json.dump(data, file)
 
+def normalize_prices():
+    data = get_prices()
+    normalization_data = {}
+
+    for key, values in data.items():
+        values = np.asarray(values)
+        mean = np.mean(values)
+        std = np.std(values)
+        normalized = (values - mean) / std
+        data[key] = normalized.tolist()
+        normalization_data[key] = {"mean": mean, "std": std}
+
+    with open("static/normalized.json", "w", encoding="utf-8") as file:
+        json.dump(data, file)
+    with open("static/normalization_data.json", "w", encoding="utf-8") as file:
+        json.dump(normalization_data, file)
+
 def get_prices():
     with open("static/data.json", "r", encoding="utf-8") as file:
         data = json.load(file)
@@ -21,3 +39,23 @@ def get_prices():
 def companies():
     with open("static/companies.txt", "r", encoding="utf-8") as file:
         return [line.strip().upper() for line in file if line.strip()]
+
+def get_normalized():
+    with open("static/normalized.json", "r", encoding="utf-8") as file:
+        data = json.load(file)
+    return data
+
+def get_normalization_data():
+    with open("static/normalization_data.json", "r", encoding="utf-8") as file:
+        data = json.load(file)
+    return data
+
+def unnormalize(data):
+    normalization_data = get_normalization_data()
+    original = {}
+
+    for key, value in data.items():
+        mean = normalization_data[key]["mean"]
+        std = normalization_data[key]["std"]
+        original[key] = (value * std) + mean
+    return original

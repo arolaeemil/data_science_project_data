@@ -8,3 +8,10 @@ Mukana myös pari koodinpätkää, joilla saa datan haettua (saman kuin kansiois
 
 Yfinancen kautta ei saa pörssistä poistuneiden yhtiöiden tietoja, koska Yahoo
 lopettaa näiden tarjoamisen.
+
+## TODO
+
+- mallin muuttaminen niin että se käyttää valmiiksi normalisoitua dataa
+- monen käyrän koulutus (k-fold)
+- data pipeline automatisointi
+- eri koulutusparametrien testaus
