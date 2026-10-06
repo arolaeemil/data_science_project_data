@@ -17,3 +17,7 @@ def get_prices():
     with open("static/data.json", "r", encoding="utf-8") as file:
         data = json.load(file)
     return data
+
+def companies():
+    with open("static/companies.txt", "r", encoding="utf-8") as file:
+        return [line.strip().upper() for line in file if line.strip()]
