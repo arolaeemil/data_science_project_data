@@ -16,6 +16,7 @@ def write_prices():
 
 def normalize_prices():
     data = get_prices()
+    normalization_data = {}
 
     for key, values in data.items():
         values = np.asarray(values)
@@ -23,9 +24,12 @@ def normalize_prices():
         std = np.std(values)
         normalized = (values - mean) / std
         data[key] = normalized.tolist()
+        normalization_data[key] = {"mean": mean, "std": std}
 
     with open("static/normalized.json", "w", encoding="utf-8") as file:
         json.dump(data, file)
+    with open("static/normalization_data.json", "w", encoding="utf-8") as file:
+        json.dump(normalization_data, file)
 
 def get_prices():
     with open("static/data.json", "r", encoding="utf-8") as file:
@@ -35,4 +39,18 @@ def get_prices():
 def get_normalized():
     with open("static/normalized.json", "r", encoding="utf-8") as file:
         data = json.load(file)
+    return data
+
+def get_normalization_data():
+    with open("static/normalization_data.json", "r", encoding="utf-8") as file:
+        data = json.load(file)
+    return data
+
+def unnormalize(data):
+    normalization_data = get_normalization_data()
+
+    for key, value in data.items():
+        mean = normalization_data[key]["mean"]
+        std = normalization_data[key]["std"]
+        data[key] = (value * std) + mean
     return data
