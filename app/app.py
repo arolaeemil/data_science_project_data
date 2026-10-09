@@ -28,43 +28,44 @@ def train_for(model, data, eval_data_lists, sequence_length, target_offset, epoc
 		this_ev.append(ev)
 	return model, this_ev
 
-evaluations = []
-data = values
-companylist = companies()
+if __name__ == "__main__":
+	evaluations = []
+	data = values
+	companylist = companies()
 
-seqlen = 100
-offset = 30
-epochs = 1
-learning_rate = 0.001
+	seqlen = 100
+	offset = 30
+	epochs = 1
+	learning_rate = 0.001
 
-model = train(values=data[companylist[0]], sequence_length=seqlen, target_offset=offset, epochs=epochs, learning_rate=learning_rate)
+	model = train(values=data[companylist[0]], sequence_length=seqlen, target_offset=offset, epochs=epochs, learning_rate=learning_rate)
 
-iterations = 3
+	iterations = 3
 
-eval_data_lists = [data[company] for company in companylist[-3:-1] + [companylist[60]]]
+	eval_data_lists = [data[company] for company in companylist[-3:-1] + [companylist[60]]]
 
-for i in range(iterations):
-	print(f"Iteration {i+1}..." + "="*40)
-	for company in companylist[1:50]:
-		print(f"Training for {company}...")
-		try:
-			model, ev = train_for(
-				model=model,
-				data=data[company],
-				eval_data_lists=eval_data_lists,
-				sequence_length=seqlen,
-				target_offset=offset,
-				epochs=epochs,
-				learning_rate=learning_rate
-			)
-			evaluations.append(ev)
-		except ValueError as e:
-			print(f"Error training for {company}: {e}")
+	for i in range(iterations):
+		print(f"Iteration {i+1}..." + "="*40)
+		for company in companylist[1:50]:
+			print(f"Training for {company}...")
+			try:
+				model, ev = train_for(
+					model=model,
+					data=data[company],
+					eval_data_lists=eval_data_lists,
+					sequence_length=seqlen,
+					target_offset=offset,
+					epochs=epochs,
+					learning_rate=learning_rate
+				)
+				evaluations.append(ev)
+			except ValueError as e:
+				print(f"Error training for {company}: {e}")
 
-plt.plot(evaluations)
-plt.ylabel("Evaluation")
-plt.title("Model Performance")
-plt.show()
+	plt.plot(evaluations)
+	plt.ylabel("Evaluation")
+	plt.title("Model Performance")
+	plt.show()
 
 
-print(evaluations)
+	print(evaluations)
