@@ -1,10 +1,8 @@
 from rnn import train, train_further, evaluate
-from utils import get_prices, write_prices, companies
+from utils import companies, get_normalized
 from matplotlib import pyplot as plt
 
-# write_prices()
-
-values = get_prices()
+values = get_normalized()
 
 def train_for(model, data, eval_data_lists, sequence_length, target_offset, epochs, learning_rate):
 	model = train_further(
@@ -42,11 +40,15 @@ if __name__ == "__main__":
 
 	iterations = 3
 
-	eval_data_lists = [data[company] for company in companylist[-3:-1] + [companylist[60]]]
+	evaluators = companylist[-3:-1] + [companylist[60]]
+	eval_data_lists = [data[company] for company in evaluators]
+	print(f"Using {evaluators} for evaluation")
 
 	for i in range(iterations):
 		print(f"Iteration {i+1}..." + "="*40)
 		for company in companylist[1:50]:
+			if company in evaluators:
+				raise ValueError("company in evaluators")
 			print(f"Training for {company}...")
 			try:
 				model, ev = train_for(
@@ -64,7 +66,7 @@ if __name__ == "__main__":
 
 	plt.plot(evaluations)
 	plt.ylabel("Evaluation")
-	plt.title("Model Performance")
+	plt.title("Error on Evaluation Data")
 	plt.show()
 
 
