@@ -1,3 +1,6 @@
+from pathlib import Path
+
+import torch
 from rnn import train, train_further, evaluate
 from utils import companies, get_normalized
 from matplotlib import pyplot as plt
@@ -133,7 +136,15 @@ def train_on_companies(model, data, companylist, evaluators, eval_data_lists, tr
 				print(f"Training loss: {training_loss:.6f}")
 			except ValueError as error:
 				print(f"Error training for {company}: {error}")
-	return evaluation_losses, training_losses
+	return model, evaluation_losses, training_losses
+
+
+def save_trained_model(model, k, which_k):
+	models_directory = Path(__file__).parent / "models"
+	models_directory.mkdir(exist_ok=True)
+	model_path = models_directory / f"model_k_{k}_which_k_{which_k}.pt"
+	torch.save(model, model_path)
+	print(f"Saved model to {model_path}")
 
 
 def plot_evaluations(evaluations, training_losses):
@@ -145,7 +156,7 @@ def plot_evaluations(evaluations, training_losses):
 	plt.show()
 
 
-def main():
+def main(save_model=False):
 	data, companylist = load_data()
 	sequence_length = 100
 	target_offset = 30
@@ -178,7 +189,7 @@ def main():
 	evaluators, eval_data_lists = get_evaluation_data(
 		data, evaluators, sequence_length, target_offset
 	)
-	evaluation_losses, training_losses = train_on_companies(
+	model, evaluation_losses, training_losses = train_on_companies(
 		model,
 		data,
 		training_companies[1:],
@@ -191,9 +202,12 @@ def main():
 		epochs,
 		learning_rate
 	)
+	if save_model:
+		save_trained_model(model, k, which_k)
 	plot_evaluations(evaluation_losses, training_losses)
 	print(evaluation_losses)
 
 
 if __name__ == "__main__":
-	main()
+	SAVE_MODEL = True
+	main(save_model=SAVE_MODEL)
