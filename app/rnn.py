@@ -127,7 +127,7 @@ def train_further(
         loss = loss_function(model(inputs), targets)
         loss.backward()
         optimizer.step()
-        print(f"Epoch {i + 1}/{epochs} - loss: {loss.item():.6f}")
+        print(f"Epoch {i + 1}/{epochs} - loss: {loss.item():.6f}", end="\r")
 
     model.eval()
     return model
