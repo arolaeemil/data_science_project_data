@@ -31,13 +31,14 @@ def load_data():
     return get_normalized(), companies()
 
 
-def initialize_model(data, companylist, sequence_length, target_offset, epochs, learning_rate):
+def initialize_model(data, companylist, sequence_length, target_offset, epochs, learning_rate, hidden_size):    
     return train(
         values=data[companylist[0]],
         sequence_length=sequence_length,
         target_offset=target_offset,
         epochs=epochs,
-        learning_rate=learning_rate
+        learning_rate=learning_rate,
+        hidden_size=hidden_size
     )
 
 
@@ -168,7 +169,8 @@ def train_one_fold(k, which_k, save_model):
     target_offset = 30
     epochs = 1
     learning_rate = 0.001
-    iterations = 1
+    iterations = 5
+    model_hidden_size = 10
 
     training_companies, evaluators, training_loss_companies = select_companies(
         companylist, k, which_k
@@ -185,7 +187,7 @@ def train_one_fold(k, which_k, save_model):
     print("=" * 80)
     
     model = initialize_model(
-        data, training_companies, sequence_length, target_offset, epochs, learning_rate
+        data, training_companies, sequence_length, target_offset, epochs, learning_rate, model_hidden_size
     )
     evaluators, eval_data_lists = get_evaluation_data(
         data, evaluators, sequence_length, target_offset
