@@ -1,0 +1,5 @@
+sequence_length = 250
+target_offset = 65
+epochs = 1
+learning_rate = 0.001
+iterations = 1
