@@ -4,4 +4,4 @@ venv
 **/**.json
 
 # Saved RNN models
-**.pt
+# **.pt
