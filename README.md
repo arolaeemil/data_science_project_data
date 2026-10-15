@@ -11,6 +11,5 @@ lopettaa näiden tarjoamisen.
 
 ## TODO
 
-- monen käyrän koulutus (k-fold)
 - data pipeline automatisointi
 - eri koulutusparametrien testaus
