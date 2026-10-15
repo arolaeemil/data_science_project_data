@@ -1,0 +1,342 @@
+====================================================================================================
+TRAINING DATA SHORTENED BY 300 STOCK MARKET DAYS, PREDICTION 30 DAYS FORWARD FROM THE NEW END POINT
+====================================================================================================
+
+5 LOWEST PREDICTED RETURNS (SELL)
+Company        Predicted      Actual    Error (pp)        Result
+----------------------------------------------------------------
+SUMMA           -149.17%     -12.90%      -136.26          LOSS
+DUELL            -26.07%      -3.27%       -22.81          LOSS
+PALLAS           -24.05%     -38.16%       +14.11          LOSS
+EAGLE            -21.21%      -1.42%       -19.78          LOSS
+NXTMH            -11.02%     -11.33%        +0.30          LOSS
+
+5 HIGHEST PREDICTED RETURNS (BUY)
+Company        Predicted      Actual    Error (pp)        Result
+----------------------------------------------------------------
+REBL             +17.91%      -9.52%       +27.44          LOSS
+RAP1V            +11.46%      +3.33%        +8.12        PROFIT
+EXEL             +10.89%      +4.00%        +6.89        PROFIT
+EEZY             +10.56%     -14.14%       +24.70          LOSS
+TYRES             +9.37%     +28.96%       -19.59        PROFIT
+
+OVERALL RESULTS
+Companies evaluated: 182
+Profitable stocks:   80
+Losing stocks:       97
+Break even:          5
+Mean signed error:   -1.47 percentage points
+
+STRATEGY EFFECTIVENESS
+Buying best 5 average return:  +2.53%
+Selling worst 5 average return: +13.42%
+Combined strategy return:      +7.97%
+
+====================================================================================================
+TRAINING DATA SHORTENED BY 270 STOCK MARKET DAYS, PREDICTION 30 DAYS FORWARD FROM THE NEW END POINT
+====================================================================================================
+
+5 LOWEST PREDICTED RETURNS (SELL)
+Company        Predicted      Actual    Error (pp)        Result
+----------------------------------------------------------------
+SUMMA           -136.30%      -3.94%      -132.36          LOSS
+PALLAS           -29.12%     -28.72%        -0.39          LOSS
+EAGLE            -19.88%      -2.31%       -17.57          LOSS
+DUELL            -13.90%      +5.45%       -19.36        PROFIT
+DIGIGR           -11.03%     +18.09%       -29.12        PROFIT
+
+5 HIGHEST PREDICTED RETURNS (BUY)
+Company        Predicted      Actual    Error (pp)        Result
+----------------------------------------------------------------
+REBL             +26.93%     -18.80%       +45.73          LOSS
+EEZY             +16.90%      -3.34%       +20.24          LOSS
+VINCIT           +14.54%      -2.06%       +16.60          LOSS
+RAP1V            +10.29%      -4.03%       +14.32          LOSS
+ELEAV             +9.87%      -6.00%       +15.87          LOSS
+
+OVERALL RESULTS
+Companies evaluated: 182
+Profitable stocks:   66
+Losing stocks:       114
+Break even:          2
+Mean signed error:   -1.06 percentage points
+
+STRATEGY EFFECTIVENESS
+Buying best 5 average return:  -6.85%
+Selling worst 5 average return: +2.28%
+Combined strategy return:      -2.28%
+
+====================================================================================================
+TRAINING DATA SHORTENED BY 240 STOCK MARKET DAYS, PREDICTION 30 DAYS FORWARD FROM THE NEW END POINT
+====================================================================================================
+
+5 LOWEST PREDICTED RETURNS (SELL)
+Company        Predicted      Actual    Error (pp)        Result
+----------------------------------------------------------------
+SSH1V            -22.07%     -36.07%       +13.99          LOSS
+NANOFH            -9.31%     -13.06%        +3.75          LOSS
+QPR1V             -9.25%     +20.39%       -29.64        PROFIT
+ERIBR             -6.03%     +23.40%       -29.43        PROFIT
+SITOWS            -4.60%     -10.82%        +6.22          LOSS
+
+5 HIGHEST PREDICTED RETURNS (BUY)
+Company        Predicted      Actual    Error (pp)        Result
+----------------------------------------------------------------
+SUMMA            +78.52%     -25.78%      +104.30          LOSS
+REBL             +42.65%      -0.93%       +43.58          LOSS
+PALLAS           +25.77%     -32.84%       +58.61          LOSS
+EEZY             +21.76%      -1.23%       +22.99          LOSS
+ELEAV            +17.35%      +2.84%       +14.51        PROFIT
+
+OVERALL RESULTS
+Companies evaluated: 184
+Profitable stocks:   91
+Losing stocks:       91
+Break even:          2
+Mean signed error:   +1.57 percentage points
+
+STRATEGY EFFECTIVENESS
+Buying best 5 average return:  -11.59%
+Selling worst 5 average return: +3.23%
+Combined strategy return:      -4.18%
+
+====================================================================================================
+TRAINING DATA SHORTENED BY 210 STOCK MARKET DAYS, PREDICTION 30 DAYS FORWARD FROM THE NEW END POINT
+====================================================================================================
+
+5 LOWEST PREDICTED RETURNS (SELL)
+Company        Predicted      Actual    Error (pp)        Result
+----------------------------------------------------------------
+ERIBR            -11.63%      -2.69%        -8.94          LOSS
+HONBS             -9.98%     -10.00%        +0.02          LOSS
+KCR               -8.86%      +9.17%       -18.03        PROFIT
+TELIA1            -8.11%      +4.47%       -12.58        PROFIT
+METSO             -7.32%      +0.62%        -7.94        PROFIT
+
+5 HIGHEST PREDICTED RETURNS (BUY)
+Company        Predicted      Actual    Error (pp)        Result
+----------------------------------------------------------------
+SUMMA           +170.41%     -53.25%      +223.66          LOSS
+PALLAS           +80.81%     +91.11%       -10.30        PROFIT
+REBL             +44.19%      -3.74%       +47.92          LOSS
+SPINN            +34.64%      -3.31%       +37.96          LOSS
+DOV1V            +30.02%      +2.57%       +27.45        PROFIT
+
+OVERALL RESULTS
+Companies evaluated: 184
+Profitable stocks:   80
+Losing stocks:       98
+Break even:          6
+Mean signed error:   +3.60 percentage points
+
+STRATEGY EFFECTIVENESS
+Buying best 5 average return:  +6.68%
+Selling worst 5 average return: -0.31%
+Combined strategy return:      +3.18%
+
+====================================================================================================
+TRAINING DATA SHORTENED BY 180 STOCK MARKET DAYS, PREDICTION 30 DAYS FORWARD FROM THE NEW END POINT
+====================================================================================================
+
+5 LOWEST PREDICTED RETURNS (SELL)
+Company        Predicted      Actual    Error (pp)        Result
+----------------------------------------------------------------
+BITTI            -15.10%     +31.89%       -47.00        PROFIT
+KCR              -11.66%      +3.52%       -15.18        PROFIT
+WRT1V             -9.74%     +17.92%       -27.66        PROFIT
+ERIBR             -9.12%     +13.26%       -22.38        PROFIT
+TELIA1            -8.85%     +31.78%       -40.63        PROFIT
+
+5 HIGHEST PREDICTED RETURNS (BUY)
+Company        Predicted      Actual    Error (pp)        Result
+----------------------------------------------------------------
+SUMMA           +178.01%     -10.42%      +188.42          LOSS
+REBL             +43.77%      +3.88%       +39.88        PROFIT
+PALLAS           +33.61%      -4.65%       +38.26          LOSS
+SPINN            +33.22%      -1.50%       +34.72          LOSS
+DOV1V            +26.73%      +2.23%       +24.50        PROFIT
+
+OVERALL RESULTS
+Companies evaluated: 184
+Profitable stocks:   117
+Losing stocks:       62
+Break even:          5
+Mean signed error:   -1.76 percentage points
+
+STRATEGY EFFECTIVENESS
+Buying best 5 average return:  -2.09%
+Selling worst 5 average return: -19.68%
+Combined strategy return:      -10.88%
+
+====================================================================================================
+TRAINING DATA SHORTENED BY 150 STOCK MARKET DAYS, PREDICTION 30 DAYS FORWARD FROM THE NEW END POINT
+====================================================================================================
+
+5 LOWEST PREDICTED RETURNS (SELL)
+Company        Predicted      Actual    Error (pp)        Result
+----------------------------------------------------------------
+BITTI            -23.01%      +0.71%       -23.72        PROFIT
+TELIA1           -18.10%      +4.38%       -22.48        PROFIT
+WRT1V            -17.06%      -5.47%       -11.59          LOSS
+SSABAH           -13.95%     -13.08%        -0.87          LOSS
+KCR              -13.65%      -5.23%        -8.42          LOSS
+
+5 HIGHEST PREDICTED RETURNS (BUY)
+Company        Predicted      Actual    Error (pp)        Result
+----------------------------------------------------------------
+SUMMA           +272.84%     -18.60%      +291.45          LOSS
+FARON           +115.77%     -18.71%      +134.48          LOSS
+LUOTEA           +69.07%     -16.81%       +85.88          LOSS
+BRETEC           +43.36%     -96.34%      +139.70          LOSS
+REBL             +40.21%      +3.74%       +36.47        PROFIT
+
+OVERALL RESULTS
+Companies evaluated: 184
+Profitable stocks:   41
+Losing stocks:       140
+Break even:          3
+Mean signed error:   +12.32 percentage points
+
+STRATEGY EFFECTIVENESS
+Buying best 5 average return:  -29.35%
+Selling worst 5 average return: +3.74%
+Combined strategy return:      -12.80%
+
+====================================================================================================
+TRAINING DATA SHORTENED BY 120 STOCK MARKET DAYS, PREDICTION 30 DAYS FORWARD FROM THE NEW END POINT
+====================================================================================================
+
+5 LOWEST PREDICTED RETURNS (SELL)
+Company        Predicted      Actual    Error (pp)        Result
+----------------------------------------------------------------
+BITTI            -28.15%      -6.69%       -21.47          LOSS
+TELIA1           -21.93%     +17.16%       -39.09        PROFIT
+ERIBR            -17.80%     +23.94%       -41.74        PROFIT
+WRT1V            -15.58%      +5.59%       -21.17        PROFIT
+ALBAV            -12.23%     -14.23%        +2.01          LOSS
+
+5 HIGHEST PREDICTED RETURNS (BUY)
+Company        Predicted      Actual    Error (pp)        Result
+----------------------------------------------------------------
+BRETEC         +2522.45%     -18.73%     +2541.18          LOSS
+SUMMA           +294.55%     +30.48%      +264.07        PROFIT
+EEZY            +159.85%     -28.38%      +188.23          LOSS
+LUOTEA          +110.10%     -11.17%      +121.27          LOSS
+FARON            +78.91%      -5.75%       +84.67          LOSS
+
+OVERALL RESULTS
+Companies evaluated: 186
+Profitable stocks:   105
+Losing stocks:       79
+Break even:          2
+Mean signed error:   +14.79 percentage points
+
+STRATEGY EFFECTIVENESS
+Buying best 5 average return:  -6.71%
+Selling worst 5 average return: -5.16%
+Combined strategy return:      -5.93%
+
+====================================================================================================
+TRAINING DATA SHORTENED BY 90 STOCK MARKET DAYS, PREDICTION 30 DAYS FORWARD FROM THE NEW END POINT
+====================================================================================================
+
+5 LOWEST PREDICTED RETURNS (SELL)
+Company        Predicted      Actual    Error (pp)        Result
+----------------------------------------------------------------
+NOKIA            -29.81%      +8.12%       -37.93        PROFIT
+TELIA1           -29.44%      -2.22%       -27.22          LOSS
+ERIBR            -28.52%      -6.14%       -22.37          LOSS
+SSABBH           -27.88%      +6.52%       -34.41        PROFIT
+SSABAH           -27.84%      +5.94%       -33.77        PROFIT
+
+5 HIGHEST PREDICTED RETURNS (BUY)
+Company        Predicted      Actual    Error (pp)        Result
+----------------------------------------------------------------
+BRETEC         +2873.16%     +69.35%     +2803.80        PROFIT
+EEZY            +261.42%     +44.49%      +216.93        PROFIT
+SUMMA           +142.78%     -55.47%      +198.26          LOSS
+LUOTEA          +123.58%     -12.02%      +135.60          LOSS
+FARON            +85.27%      +3.16%       +82.11        PROFIT
+
+OVERALL RESULTS
+Companies evaluated: 187
+Profitable stocks:   77
+Losing stocks:       107
+Break even:          3
+Mean signed error:   +19.93 percentage points
+
+STRATEGY EFFECTIVENESS
+Buying best 5 average return:  +9.90%
+Selling worst 5 average return: -2.44%
+Combined strategy return:      +3.73%
+
+====================================================================================================
+TRAINING DATA SHORTENED BY 60 STOCK MARKET DAYS, PREDICTION 30 DAYS FORWARD FROM THE NEW END POINT
+====================================================================================================
+
+5 LOWEST PREDICTED RETURNS (SELL)
+Company        Predicted      Actual    Error (pp)        Result
+----------------------------------------------------------------
+SUMMA           -667.28%     -26.23%      -641.05          LOSS
+NOKIA            -32.91%     -31.03%        -1.88          LOSS
+SSABBH           -27.90%     +14.55%       -42.45        PROFIT
+SSABAH           -27.46%     +13.63%       -41.09        PROFIT
+TELIA1           -25.56%      +2.25%       -27.80        PROFIT
+
+5 HIGHEST PREDICTED RETURNS (BUY)
+Company        Predicted      Actual    Error (pp)        Result
+----------------------------------------------------------------
+BRETEC         +1331.84%      +0.00%     +1331.84    BREAK EVEN
+LUOTEA          +131.35%      +9.41%      +121.94        PROFIT
+EEZY            +117.32%      -5.53%      +122.85          LOSS
+SUY1V            +67.14%     +22.87%       +44.27        PROFIT
+FARON            +62.77%      -4.69%       +67.46          LOSS
+
+OVERALL RESULTS
+Companies evaluated: 188
+Profitable stocks:   115
+Losing stocks:       69
+Break even:          4
+Mean signed error:   +3.44 percentage points
+
+STRATEGY EFFECTIVENESS
+Buying best 5 average return:  +4.41%
+Selling worst 5 average return: +5.37%
+Combined strategy return:      +4.89%
+
+====================================================================================================
+TRAINING DATA SHORTENED BY 30 STOCK MARKET DAYS, PREDICTION 30 DAYS FORWARD FROM THE NEW END POINT
+====================================================================================================
+
+5 LOWEST PREDICTED RETURNS (SELL)
+Company        Predicted      Actual    Error (pp)        Result
+----------------------------------------------------------------
+SSABBH           -37.06%      -1.76%       -35.30          LOSS
+SSABAH           -36.29%      -1.48%       -34.81          LOSS
+TELIA1           -28.51%      +7.39%       -35.90        PROFIT
+KREATE           -26.36%      +6.25%       -32.61        PROFIT
+ERIBR            -18.96%      -0.57%       -18.39          LOSS
+
+5 HIGHEST PREDICTED RETURNS (BUY)
+Company        Predicted      Actual    Error (pp)        Result
+----------------------------------------------------------------
+BRETEC         +1608.45%     +46.67%     +1561.78        PROFIT
+SUMMA           +355.96%     -44.56%      +400.52          LOSS
+EEZY            +156.36%      +5.85%      +150.51        PROFIT
+LUOTEA          +129.30%      -2.35%      +131.65          LOSS
+FARON            +83.04%     -12.31%       +95.35          LOSS
+
+OVERALL RESULTS
+Companies evaluated: 190
+Profitable stocks:   102
+Losing stocks:       86
+Break even:          2
+Mean signed error:   +10.61 percentage points
+
+STRATEGY EFFECTIVENESS
+Buying best 5 average return:  -1.34%
+Selling worst 5 average return: -1.97%
+Combined strategy return:      -1.65%
+
+Prediction complete.
+Mean total profit per time period: -1.80%

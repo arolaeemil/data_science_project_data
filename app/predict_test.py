@@ -19,7 +19,8 @@ def main():
 
     total_profit = []
 
-    for cut_by in range(target_offset, limit * target_offset + 1, target_offset):
+    #for cut_by in range(target_offset, limit * target_offset + 1, target_offset):
+    for cut_by in range(10*target_offset, 0, -target_offset):
         model_path = models_directory / (
             f"model_cut_by-{cut_by}_seqlen-{sequence_length}"
             f"_offset-{target_offset}.pt"
@@ -30,7 +31,7 @@ def main():
             continue
 
         print("\n" + "=" * 100)
-        print(f"MODEL CUT BY {cut_by}")
+        print(f"TRAINING DATA SHORTENED BY {cut_by} STOCK MARKET DAYS, PREDICTION {target_offset} DAYS FORWARD FROM THE NEW END POINT")
         print("=" * 100)
 
         model = torch.load(
@@ -133,7 +134,7 @@ def main():
 
         sorted_predictions = sorted(predictions, key=lambda p: p["predicted"])
 
-        print_results("5 LOWEST PREDICTED RETURNS (SHORT)", sorted_predictions[:5])
+        print_results("5 LOWEST PREDICTED RETURNS (SELL)", sorted_predictions[:5])
 
         print_results("5 HIGHEST PREDICTED RETURNS (BUY)",sorted_predictions[-5:][::-1])
 
