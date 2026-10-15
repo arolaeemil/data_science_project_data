@@ -18,6 +18,8 @@ def main():
     normalization_data = get_normalization_data()
 
     total_profit = []
+    sell_profit = []
+    buy_profit = []
 
     #for cut_by in range(target_offset, limit * target_offset + 1, target_offset):
     for cut_by in range(10*target_offset, 0, -target_offset):
@@ -45,6 +47,9 @@ def main():
 
         for company in company_list:
             if company not in data or company not in normalization_data:
+                continue
+            # faulty data for some of the time series
+            if company == "SSABBH" or company == "SSABAH":
                 continue
 
             values = data[company]
@@ -154,6 +159,8 @@ def main():
         # Assume equal capital allocated to the long and short sides
         strategy_return = (best_return + worst_return) / 2
 
+        buy_profit.append(best_return)
+        sell_profit.append(worst_return)
         total_profit.append(strategy_return)
 
         # Overall statistics
@@ -180,7 +187,11 @@ def main():
     print("\nPrediction complete.")
 
     total_profit_mean = np.mean(total_profit)
+    buy_profit_mean = np.mean(buy_profit)
+    sell_profit_mean = np.mean(sell_profit)
     print(f"Mean total profit per time period: {total_profit_mean:+.2f}%")
+    print(f"Mean buying profit per time period: {buy_profit_mean:+.2f}%")
+    print(f"Mean selling profit per time period: {sell_profit_mean:+.2f}%")
 
 if __name__ == "__main__":
     main()

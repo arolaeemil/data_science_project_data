@@ -53,8 +53,11 @@ def main(save_model=True):
             print(f"\nIteration {iteration + 1}/{iterations}")
 
             for company in valid_companies[1:]:
+                # these have faulty data
+                if company == "SSABBH" or company == "SSABAH":
+                    print("Skipped company")
+                    continue
                 print(f"Training for {company}...")
-
                 model = train_further(
                     model=model,
                     values=data[company],
