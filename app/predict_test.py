@@ -92,12 +92,12 @@ def main():
 
             error = predicted_change - actual_change
 
-            if actual_change > 0:
+            if predicted_change > 0 and actual_change > 0 or predicted_change < 0 and actual_change < 0:
                 result = "PROFIT"
-            elif actual_change < 0:
-                result = "LOSS"
-            else:
+            elif predicted_change == actual_change == 0:
                 result = "BREAK EVEN"
+            else:
+                result = "LOSS"
 
             predictions.append({
                 "company": company,

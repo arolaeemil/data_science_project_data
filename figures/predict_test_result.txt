@@ -5,11 +5,11 @@ TRAINING DATA SHORTENED BY 300 STOCK MARKET DAYS, PREDICTION 30 DAYS FORWARD FRO
 5 LOWEST PREDICTED RETURNS (SELL)
 Company        Predicted      Actual    Error (pp)        Result
 ----------------------------------------------------------------
-SUMMA           -149.17%     -12.90%      -136.26          LOSS
-DUELL            -26.07%      -3.27%       -22.81          LOSS
-PALLAS           -24.05%     -38.16%       +14.11          LOSS
-EAGLE            -21.21%      -1.42%       -19.78          LOSS
-NXTMH            -11.02%     -11.33%        +0.30          LOSS
+SUMMA           -149.17%     -12.90%      -136.26        PROFIT
+DUELL            -26.07%      -3.27%       -22.81        PROFIT
+PALLAS           -24.05%     -38.16%       +14.11        PROFIT
+EAGLE            -21.21%      -1.42%       -19.78        PROFIT
+NXTMH            -11.02%     -11.33%        +0.30        PROFIT
 
 5 HIGHEST PREDICTED RETURNS (BUY)
 Company        Predicted      Actual    Error (pp)        Result
@@ -39,11 +39,11 @@ TRAINING DATA SHORTENED BY 270 STOCK MARKET DAYS, PREDICTION 30 DAYS FORWARD FRO
 5 LOWEST PREDICTED RETURNS (SELL)
 Company        Predicted      Actual    Error (pp)        Result
 ----------------------------------------------------------------
-SUMMA           -136.30%      -3.94%      -132.36          LOSS
-PALLAS           -29.12%     -28.72%        -0.39          LOSS
-EAGLE            -19.88%      -2.31%       -17.57          LOSS
-DUELL            -13.90%      +5.45%       -19.36        PROFIT
-DIGIGR           -11.03%     +18.09%       -29.12        PROFIT
+SUMMA           -136.30%      -3.94%      -132.36        PROFIT
+PALLAS           -29.12%     -28.72%        -0.39        PROFIT
+EAGLE            -19.88%      -2.31%       -17.57        PROFIT
+DUELL            -13.90%      +5.45%       -19.36          LOSS
+DIGIGR           -11.03%     +18.09%       -29.12          LOSS
 
 5 HIGHEST PREDICTED RETURNS (BUY)
 Company        Predicted      Actual    Error (pp)        Result
@@ -73,11 +73,11 @@ TRAINING DATA SHORTENED BY 240 STOCK MARKET DAYS, PREDICTION 30 DAYS FORWARD FRO
 5 LOWEST PREDICTED RETURNS (SELL)
 Company        Predicted      Actual    Error (pp)        Result
 ----------------------------------------------------------------
-SSH1V            -22.07%     -36.07%       +13.99          LOSS
-NANOFH            -9.31%     -13.06%        +3.75          LOSS
-QPR1V             -9.25%     +20.39%       -29.64        PROFIT
-ERIBR             -6.03%     +23.40%       -29.43        PROFIT
-SITOWS            -4.60%     -10.82%        +6.22          LOSS
+SSH1V            -22.07%     -36.07%       +13.99        PROFIT
+NANOFH            -9.31%     -13.06%        +3.75        PROFIT
+QPR1V             -9.25%     +20.39%       -29.64          LOSS
+ERIBR             -6.03%     +23.40%       -29.43          LOSS
+SITOWS            -4.60%     -10.82%        +6.22        PROFIT
 
 5 HIGHEST PREDICTED RETURNS (BUY)
 Company        Predicted      Actual    Error (pp)        Result
@@ -107,11 +107,11 @@ TRAINING DATA SHORTENED BY 210 STOCK MARKET DAYS, PREDICTION 30 DAYS FORWARD FRO
 5 LOWEST PREDICTED RETURNS (SELL)
 Company        Predicted      Actual    Error (pp)        Result
 ----------------------------------------------------------------
-ERIBR            -11.63%      -2.69%        -8.94          LOSS
-HONBS             -9.98%     -10.00%        +0.02          LOSS
-KCR               -8.86%      +9.17%       -18.03        PROFIT
-TELIA1            -8.11%      +4.47%       -12.58        PROFIT
-METSO             -7.32%      +0.62%        -7.94        PROFIT
+ERIBR            -11.63%      -2.69%        -8.94        PROFIT
+HONBS             -9.98%     -10.00%        +0.02        PROFIT
+KCR               -8.86%      +9.17%       -18.03          LOSS
+TELIA1            -8.11%      +4.47%       -12.58          LOSS
+METSO             -7.32%      +0.62%        -7.94          LOSS
 
 5 HIGHEST PREDICTED RETURNS (BUY)
 Company        Predicted      Actual    Error (pp)        Result
@@ -141,11 +141,11 @@ TRAINING DATA SHORTENED BY 180 STOCK MARKET DAYS, PREDICTION 30 DAYS FORWARD FRO
 5 LOWEST PREDICTED RETURNS (SELL)
 Company        Predicted      Actual    Error (pp)        Result
 ----------------------------------------------------------------
-BITTI            -15.10%     +31.89%       -47.00        PROFIT
-KCR              -11.66%      +3.52%       -15.18        PROFIT
-WRT1V             -9.74%     +17.92%       -27.66        PROFIT
-ERIBR             -9.12%     +13.26%       -22.38        PROFIT
-TELIA1            -8.85%     +31.78%       -40.63        PROFIT
+BITTI            -15.10%     +31.89%       -47.00          LOSS
+KCR              -11.66%      +3.52%       -15.18          LOSS
+WRT1V             -9.74%     +17.92%       -27.66          LOSS
+ERIBR             -9.12%     +13.26%       -22.38          LOSS
+TELIA1            -8.85%     +31.78%       -40.63          LOSS
 
 5 HIGHEST PREDICTED RETURNS (BUY)
 Company        Predicted      Actual    Error (pp)        Result
@@ -175,11 +175,11 @@ TRAINING DATA SHORTENED BY 150 STOCK MARKET DAYS, PREDICTION 30 DAYS FORWARD FRO
 5 LOWEST PREDICTED RETURNS (SELL)
 Company        Predicted      Actual    Error (pp)        Result
 ----------------------------------------------------------------
-BITTI            -23.01%      +0.71%       -23.72        PROFIT
-TELIA1           -18.10%      +4.38%       -22.48        PROFIT
-WRT1V            -17.06%      -5.47%       -11.59          LOSS
-SSABAH           -13.95%     -13.08%        -0.87          LOSS
-KCR              -13.65%      -5.23%        -8.42          LOSS
+BITTI            -23.01%      +0.71%       -23.72          LOSS
+TELIA1           -18.10%      +4.38%       -22.48          LOSS
+WRT1V            -17.06%      -5.47%       -11.59        PROFIT
+SSABAH           -13.95%     -13.08%        -0.87        PROFIT
+KCR              -13.65%      -5.23%        -8.42        PROFIT
 
 5 HIGHEST PREDICTED RETURNS (BUY)
 Company        Predicted      Actual    Error (pp)        Result
@@ -209,11 +209,11 @@ TRAINING DATA SHORTENED BY 120 STOCK MARKET DAYS, PREDICTION 30 DAYS FORWARD FRO
 5 LOWEST PREDICTED RETURNS (SELL)
 Company        Predicted      Actual    Error (pp)        Result
 ----------------------------------------------------------------
-BITTI            -28.15%      -6.69%       -21.47          LOSS
-TELIA1           -21.93%     +17.16%       -39.09        PROFIT
-ERIBR            -17.80%     +23.94%       -41.74        PROFIT
-WRT1V            -15.58%      +5.59%       -21.17        PROFIT
-ALBAV            -12.23%     -14.23%        +2.01          LOSS
+BITTI            -28.15%      -6.69%       -21.47        PROFIT
+TELIA1           -21.93%     +17.16%       -39.09          LOSS
+ERIBR            -17.80%     +23.94%       -41.74          LOSS
+WRT1V            -15.58%      +5.59%       -21.17          LOSS
+ALBAV            -12.23%     -14.23%        +2.01        PROFIT
 
 5 HIGHEST PREDICTED RETURNS (BUY)
 Company        Predicted      Actual    Error (pp)        Result
@@ -243,11 +243,11 @@ TRAINING DATA SHORTENED BY 90 STOCK MARKET DAYS, PREDICTION 30 DAYS FORWARD FROM
 5 LOWEST PREDICTED RETURNS (SELL)
 Company        Predicted      Actual    Error (pp)        Result
 ----------------------------------------------------------------
-NOKIA            -29.81%      +8.12%       -37.93        PROFIT
-TELIA1           -29.44%      -2.22%       -27.22          LOSS
-ERIBR            -28.52%      -6.14%       -22.37          LOSS
-SSABBH           -27.88%      +6.52%       -34.41        PROFIT
-SSABAH           -27.84%      +5.94%       -33.77        PROFIT
+NOKIA            -29.81%      +8.12%       -37.93          LOSS
+TELIA1           -29.44%      -2.22%       -27.22        PROFIT
+ERIBR            -28.52%      -6.14%       -22.37        PROFIT
+SSABBH           -27.88%      +6.52%       -34.41          LOSS
+SSABAH           -27.84%      +5.94%       -33.77          LOSS
 
 5 HIGHEST PREDICTED RETURNS (BUY)
 Company        Predicted      Actual    Error (pp)        Result
@@ -277,16 +277,16 @@ TRAINING DATA SHORTENED BY 60 STOCK MARKET DAYS, PREDICTION 30 DAYS FORWARD FROM
 5 LOWEST PREDICTED RETURNS (SELL)
 Company        Predicted      Actual    Error (pp)        Result
 ----------------------------------------------------------------
-SUMMA           -667.28%     -26.23%      -641.05          LOSS
-NOKIA            -32.91%     -31.03%        -1.88          LOSS
-SSABBH           -27.90%     +14.55%       -42.45        PROFIT
-SSABAH           -27.46%     +13.63%       -41.09        PROFIT
-TELIA1           -25.56%      +2.25%       -27.80        PROFIT
+SUMMA           -667.28%     -26.23%      -641.05        PROFIT
+NOKIA            -32.91%     -31.03%        -1.88        PROFIT
+SSABBH           -27.90%     +14.55%       -42.45          LOSS
+SSABAH           -27.46%     +13.63%       -41.09          LOSS
+TELIA1           -25.56%      +2.25%       -27.80          LOSS
 
 5 HIGHEST PREDICTED RETURNS (BUY)
 Company        Predicted      Actual    Error (pp)        Result
 ----------------------------------------------------------------
-BRETEC         +1331.84%      +0.00%     +1331.84    BREAK EVEN
+BRETEC         +1331.84%      +0.00%     +1331.84          LOSS
 LUOTEA          +131.35%      +9.41%      +121.94        PROFIT
 EEZY            +117.32%      -5.53%      +122.85          LOSS
 SUY1V            +67.14%     +22.87%       +44.27        PROFIT
@@ -311,11 +311,11 @@ TRAINING DATA SHORTENED BY 30 STOCK MARKET DAYS, PREDICTION 30 DAYS FORWARD FROM
 5 LOWEST PREDICTED RETURNS (SELL)
 Company        Predicted      Actual    Error (pp)        Result
 ----------------------------------------------------------------
-SSABBH           -37.06%      -1.76%       -35.30          LOSS
-SSABAH           -36.29%      -1.48%       -34.81          LOSS
-TELIA1           -28.51%      +7.39%       -35.90        PROFIT
-KREATE           -26.36%      +6.25%       -32.61        PROFIT
-ERIBR            -18.96%      -0.57%       -18.39          LOSS
+SSABBH           -37.06%      -1.76%       -35.30        PROFIT
+SSABAH           -36.29%      -1.48%       -34.81        PROFIT
+TELIA1           -28.51%      +7.39%       -35.90          LOSS
+KREATE           -26.36%      +6.25%       -32.61          LOSS
+ERIBR            -18.96%      -0.57%       -18.39        PROFIT
 
 5 HIGHEST PREDICTED RETURNS (BUY)
 Company        Predicted      Actual    Error (pp)        Result
