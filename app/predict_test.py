@@ -99,7 +99,7 @@ def main():
 
             if predicted_change > 0 and actual_change > 0 or predicted_change < 0 and actual_change < 0:
                 result = "PROFIT"
-            elif predicted_change == actual_change == 0:
+            elif actual_change == 0:
                 result = "BREAK EVEN"
             else:
                 result = "LOSS"
