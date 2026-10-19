@@ -11,7 +11,8 @@ def main():
 
     sequence_length = 100
     target_offset = 30
-    limit = 10
+    #limit = 10
+    limit = 30
     models_directory = Path(__file__).parent / "models" / "test"
 
     company_list = companies()
@@ -26,10 +27,14 @@ def main():
     buy_profit = []
 
     #for cut_by in range(target_offset, limit * target_offset + 1, target_offset):
-    for cut_by in range(10*target_offset, 0, -target_offset):
+    for cut_by in range(limit*target_offset, 0, -target_offset):
+        #model_path = models_directory / (
+        #   f"model_cut_by-{cut_by}_seqlen-{sequence_length}"
+        #  f"_offset-{target_offset}.pt"
+        #)
         model_path = models_directory / (
             f"model_cut_by-{cut_by}_seqlen-{sequence_length}"
-            f"_offset-{target_offset}.pt"
+            f"_offset-{target_offset}_open.pt"
         )
 
         if not model_path.exists():
