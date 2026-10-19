@@ -2,6 +2,7 @@
 from pathlib import Path
 import torch
 from utils import companies, get_normalized, get_normalization_data
+from utils_open import get_normalized_open, get_normalization_data_open
 import numpy as np
 
 # simple test where it is assumed that every iteration 5 best stocks are bought with equal sum and 5 worst are sold. 
@@ -13,9 +14,12 @@ def main():
     limit = 10
     models_directory = Path(__file__).parent / "models" / "test"
 
-    data = get_normalized()
+    #data = get_normalized()
+    #normalization_data = get_normalization_data()
     company_list = companies()
-    normalization_data = get_normalization_data()
+
+    data = get_normalized_open()
+    normalization_data = get_normalization_data_open()
 
     total_profit = []
     sell_profit = []
@@ -23,9 +27,14 @@ def main():
 
     #for cut_by in range(target_offset, limit * target_offset + 1, target_offset):
     for cut_by in range(10*target_offset, 0, -target_offset):
+        #model_path = models_directory / (
+        #    f"model_cut_by-{cut_by}_seqlen-{sequence_length}"
+        #    f"_offset-{target_offset}.pt"
+        #)
+
         model_path = models_directory / (
             f"model_cut_by-{cut_by}_seqlen-{sequence_length}"
-            f"_offset-{target_offset}.pt"
+            f"_offset-{target_offset}_open.pt"
         )
 
         if not model_path.exists():
@@ -49,8 +58,8 @@ def main():
             if company not in data or company not in normalization_data:
                 continue
             # faulty data for some of the time series
-            if company == "SSABBH" or company == "SSABAH":
-                continue
+            #if company == "SSABBH" or company == "SSABAH":
+                #continue
 
             values = data[company]
             cutoff = len(values) - cut_by

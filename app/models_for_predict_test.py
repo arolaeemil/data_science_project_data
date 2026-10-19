@@ -2,6 +2,7 @@ from pathlib import Path
 import torch
 from rnn import train, train_further, evaluate
 from utils import companies, get_normalized
+from utils_open import get_normalized_open, get_normalization_data_open
 from matplotlib import pyplot as plt
 
 # Note: normalizations are made with whole datasets, so this might affect results somewhat.
@@ -15,7 +16,8 @@ def main(save_model=True):
     iterations = 1
     i = target_offset
     limit = 10
-    data = get_normalized()
+    #data = get_normalized()
+    data = get_normalized_open()
     companylist = companies()
 
     while i <= limit*target_offset:
@@ -54,9 +56,9 @@ def main(save_model=True):
 
             for company in valid_companies[1:]:
                 # these have faulty data
-                if company == "SSABBH" or company == "SSABAH":
-                    print("Skipped company")
-                    continue
+                #if company == "SSABBH" or company == "SSABAH":
+                    #print("Skipped company")
+                    #continue
                 print(f"Training for {company}...")
                 model = train_further(
                     model=model,
@@ -79,7 +81,8 @@ def main(save_model=True):
         if save_model:
             models_directory = Path(__file__).parent / "models/test"
             models_directory.mkdir(exist_ok=True)
-            model_path = models_directory / f"model_cut_by-{i}_seqlen-{sequence_length}_offset-{target_offset}.pt"
+            #model_path = models_directory / f"model_cut_by-{i}_seqlen-{sequence_length}_offset-{target_offset}.pt"
+            model_path = models_directory / f"model_cut_by-{i}_seqlen-{sequence_length}_offset-{target_offset}_open.pt"
             torch.save(model, model_path)
 
             print(f"\nSaved model to {model_path}")
