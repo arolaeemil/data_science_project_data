@@ -9,7 +9,10 @@ import numpy as np
 
 def main():
 
-    sequence_length = 100
+    #sequence_length = 30
+    sequence_length = 60
+    #sequence_length = 100
+    #sequence_length = 150
     target_offset = 30
     #limit = 10
     limit = 30
@@ -160,7 +163,7 @@ def main():
 
         # How many to buy or sell
         amount_to_do = 1
-        amount_to_show = 5
+        amount_to_show = 1
 
         print_results(f"{amount_to_show} LOWEST PREDICTED RETURNS (SELL)", sorted_predictions[:amount_to_show])
         print_results(f"{amount_to_show} HIGHEST PREDICTED RETURNS (BUY)",sorted_predictions[-amount_to_show:][::-1])
