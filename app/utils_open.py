@@ -130,7 +130,7 @@ if __name__ == "__main__":
     make_cuts = 1
 
     if make_cuts == 1:
-        limit = 30
+        limit = 60
         cut = 30
         i = cut
         while i <= limit*cut:

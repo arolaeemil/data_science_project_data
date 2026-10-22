@@ -9,11 +9,13 @@ from matplotlib import pyplot as plt
 
 def main(save_model=True):
 # Parameters
-    sequence_length = 30
+    #sequence_length = 30
     #sequence_length = 60
     #sequence_length = 100
-    #sequence_length = 150
-    target_offset = 30
+    sequence_length = 150
+    #sequence_length = 200
+    #target_offset = 30
+    target_offset = 60
     epochs = 1
     learning_rate = 0.001
     iterations = 1

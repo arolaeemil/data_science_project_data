@@ -2,18 +2,24 @@
 from pathlib import Path
 import torch
 from utils import companies
-from utils_open import get_normalized_open_cut, get_normalization_data_open_cut
+from utils_open import get_normalized_open_cut, get_normalization_data_open_cut, get_prices_open
 import numpy as np
 
-# simple test where it is assumed that every iteration 5 best stocks are bought with equal sum and 5 worst are sold. 
+# simple test where it is assumed that every iteration set amount of best stocks are bought with equal sum and 5 worst are sold. 
+
+printing = 1
 
 def main():
 
     #sequence_length = 30
-    sequence_length = 60
+    #sequence_length = 60
     #sequence_length = 100
-    #sequence_length = 150
+    sequence_length = 150
+    #sequence_length = 200
+
     target_offset = 30
+    #target_offset = 60
+
     #limit = 10
     limit = 30
     models_directory = Path(__file__).parent / "models" / "test" / "simulation"
@@ -29,6 +35,8 @@ def main():
     sell_profit = []
     buy_profit = []
 
+    eval_data = get_prices_open()
+    
     #for cut_by in range(target_offset, limit * target_offset + 1, target_offset):
     for cut_by in range(limit*target_offset, 0, -target_offset):
 
@@ -68,6 +76,8 @@ def main():
         predictions = []
 
         for company in company_list:
+            #print(company)
+            #print(len(data[company]))
             if company not in data or company not in normalization_data:
                 continue
             # faulty data for some of the time series
@@ -75,19 +85,21 @@ def main():
                 #continue
 
             values = data[company]
-            cutoff = len(values) - cut_by
+            #cutoff = len(values) - cut_by
 
             # Check that sufficient input and future data exist
-            if cutoff < sequence_length:
+            #if cutoff < sequence_length:
+            if len(values) < sequence_length:
                 continue
 
-            actual_index = cutoff + target_offset - 1
+            actual_index = len(values) + target_offset - 1
 
-            if actual_index >= len(values):
-                continue
+            #if actual_index >= len(values):
+                #continue
 
             #input_values = values[cutoff - sequence_length:cutoff]
-            input_values = values[-(sequence_length + cut_by):-cut_by]
+            #input_values = values[-(sequence_length + cut_by):-cut_by]
+            input_values = values[-sequence_length:]
             #print(-(sequence_length + cut_by))
             #print(-cut_by)
             #break
@@ -96,9 +108,10 @@ def main():
             mean = stats["mean"]
             std = stats["std"]
 
-            current_price = float(values[cutoff - 1]) * std + mean
+            current_price = float(values[len(values) - 1]) * std + mean
 
-            actual_future_price = (float(values[actual_index]) * std + mean)
+            #actual_future_price = (float(values[actual_index]) * std + mean)
+            actual_future_price = eval_data[company][len(values) + target_offset -1]
 
             if current_price <= 0:
                 continue
@@ -118,6 +131,16 @@ def main():
             actual_change = ((actual_future_price - current_price) / current_price) * 100
 
             error = predicted_change - actual_change
+
+            # TESTING
+            if company == "NDA-FI":
+                print("predicting (company, data length, price):")
+                print(company)
+                print(len(values))
+                print(predicted_price)
+                print("actual (price and index):")
+                print(actual_future_price)
+                print(len(values) + target_offset -1)
 
             if predicted_change > 0 and actual_change > 0 or predicted_change < 0 and actual_change < 0:
                 result = "PROFIT"
@@ -165,8 +188,9 @@ def main():
         amount_to_do = 1
         amount_to_show = 1
 
-        print_results(f"{amount_to_show} LOWEST PREDICTED RETURNS (SELL)", sorted_predictions[:amount_to_show])
-        print_results(f"{amount_to_show} HIGHEST PREDICTED RETURNS (BUY)",sorted_predictions[-amount_to_show:][::-1])
+        if printing == 1:
+            print_results(f"{amount_to_show} LOWEST PREDICTED RETURNS (SELL)", sorted_predictions[:amount_to_show])
+            print_results(f"{amount_to_show} HIGHEST PREDICTED RETURNS (BUY)",sorted_predictions[-amount_to_show:][::-1])
 
         # Buy the "amount_to_do" companies with the highest predicted returns
         best = sorted_predictions[-amount_to_do:]
@@ -197,26 +221,31 @@ def main():
                      )
         break_even = sum(p["actual"] == 0 for p in predictions)
 
-        print("\nOVERALL RESULTS")
-        print(f"Companies evaluated: {len(predictions)}")
-        print(f"Profitable stocks:   {profitable}")
-        print(f"Losing stocks:       {losing}")
-        print(f"Break even:          {break_even}")
-        print(f"Mean signed error:   {mean_error:+.2f} percentage points")
+        if printing == 1:
+            print("\nOVERALL RESULTS")
+            print(f"Companies evaluated: {len(predictions)}")
+            print(f"Profitable stocks:   {profitable}")
+            print(f"Losing stocks:       {losing}")
+            print(f"Break even:          {break_even}")
+            print(f"Mean signed error:   {mean_error:+.2f} percentage points")
 
-        print("\nSTRATEGY EFFECTIVENESS")
-        print(f"Buying best {amount_to_do} average return:  {best_return:+.2f}%")
-        print(f"Selling worst {amount_to_do} average return: {worst_return:+.2f}%")
-        print(f"Combined strategy return:      {strategy_return:+.2f}%")
+            print("\nSTRATEGY EFFECTIVENESS")
+            print(f"Buying best {amount_to_do} average return:  {best_return:+.2f}%")
+            print(f"Selling worst {amount_to_do} average return: {worst_return:+.2f}%")
+            print(f"Combined strategy return:      {strategy_return:+.2f}%")
 
-    print("\nPrediction complete.")
+    if printing == 1:
+        print("\nPrediction complete.")
 
     total_profit_mean = np.mean(total_profit)
     buy_profit_mean = np.mean(buy_profit)
     sell_profit_mean = np.mean(sell_profit)
-    print(f"Mean total profit per time period: {total_profit_mean:+.2f}%")
-    print(f"Mean buying profit per time period: {buy_profit_mean:+.2f}%")
-    print(f"Mean selling profit per time period: {sell_profit_mean:+.2f}%")
+
+    if printing == 1:
+        print(f"Mean total profit per time period: {total_profit_mean:+.2f}%")
+        print(f"Mean buying profit per time period: {buy_profit_mean:+.2f}%")
+        print(f"Mean selling profit per time period: {sell_profit_mean:+.2f}%")
+        print(f"Std of total profit (%) per time period: {np.std(total_profit)}")
 
 if __name__ == "__main__":
     main()
