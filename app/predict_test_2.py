@@ -4,6 +4,7 @@ import torch
 from utils import companies
 from utils_open import get_normalized_open_cut, get_normalization_data_open_cut, get_prices_open
 import numpy as np
+import matplotlib.pyplot as plt
 
 # simple test where it is assumed that every iteration set amount of best stocks are bought with equal sum and 5 worst are sold. 
 
@@ -17,11 +18,14 @@ def main():
     sequence_length = 150
     #sequence_length = 200
 
-    target_offset = 30
+    #target_offset = 30
     #target_offset = 60
+    target_offset = 90
 
     #limit = 10
-    limit = 30
+    limit = 20
+    #limit = 30
+
     models_directory = Path(__file__).parent / "models" / "test" / "simulation"
 
     #data = get_normalized()
@@ -84,6 +88,10 @@ def main():
             #if company == "SSABBH" or company == "SSABAH":
                 #continue
 
+            #very volatile stocks
+            #if company == "SUMMA" or company == "BRETEC":
+                #continue
+
             values = data[company]
             #cutoff = len(values) - cut_by
 
@@ -133,14 +141,14 @@ def main():
             error = predicted_change - actual_change
 
             # TESTING
-            if company == "NDA-FI":
-                print("predicting (company, data length, price):")
-                print(company)
-                print(len(values))
-                print(predicted_price)
-                print("actual (price and index):")
-                print(actual_future_price)
-                print(len(values) + target_offset -1)
+            #if company == "NDA-FI":
+                #print("predicting (company, data length, price):")
+                #print(company)
+                #print(len(values))
+                #print(predicted_price)
+                #print("actual (price and index):")
+                #print(actual_future_price)
+                #print(len(values) + target_offset -1)
 
             if predicted_change > 0 and actual_change > 0 or predicted_change < 0 and actual_change < 0:
                 result = "PROFIT"
@@ -199,11 +207,25 @@ def main():
         worst = sorted_predictions[:amount_to_do]
 
         # Average return from buying the best
-        best_return = sum(p["actual"] for p in best) / len(best)
+        #best_return = sum(p["actual"] for p in best) / len(best)
+        best_return = 0
+        best_sum = 0
+        for thing in best:
+            best_sum = best_sum + thing["actual"]
+        best_return = best_sum/amount_to_do
 
         # Average return from short-selling the worst
         # A falling share price generates a positive short return
-        worst_return = -sum(p["actual"] for p in worst) / len(worst)
+        #worst_return = -sum(p["actual"] for p in worst) / len(worst)
+        #worst_return = -sum((100/(p["actual"] + 100))*100 for p in worst) / len(worst)
+        worst_return = 0
+        worst_sum = 0
+        for thing in worst:
+            if thing["actual"] > 0:
+                worst_sum = worst_sum - (100 - (100/(thing["actual"] + 100))*100)
+            if thing["actual"] <= 0:
+                worst_sum = worst_sum + (-thing["actual"])
+        worst_return = worst_sum/amount_to_do
 
         # Assume equal capital allocated to the long and short sides
         strategy_return = (best_return + worst_return) / 2
@@ -247,5 +269,14 @@ def main():
         print(f"Mean selling profit per time period: {sell_profit_mean:+.2f}%")
         print(f"Std of total profit (%) per time period: {np.std(total_profit)}")
 
+    plt.plot(total_profit, label="Combined profit", color="black")
+    plt.plot(buy_profit, label="Buy profit", color="red")
+    plt.plot(sell_profit, label="Sell profit", color="blue")
+    plt.grid(True)
+    plt.xlabel("Interval")
+    plt.ylabel("Profit for interval (%)")
+    plt.title(f"Target offset {target_offset}, sequence length {sequence_length}, performance over {limit} intervals")
+    plt.legend()
+    plt.show()
 if __name__ == "__main__":
     main()
